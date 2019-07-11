@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Chat</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <div class="container">
+      <% if current_user.present? %>
+          <li><a href="/users/sign_out">Sign Out</a></li>
+        <% else %>  
+          <li><a href="/users/sign_in">Log In</a></li>
+        <% end %> 
+      <%= yield %>
+    </div>
+  </body>
+</html>
